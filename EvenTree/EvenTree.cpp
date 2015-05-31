@@ -39,12 +39,6 @@ EdgeList get_edge_list(const Node root, const EdgeMap& edge_map) {
 	return edge_list;
 }
 
-// Counts the number of nodes accessible from the given starting point (root)
-int count_nodes(const Node root, const EdgeMap& edge_map) {
-	// Return the number of edges in the graph + 1 vertex (always holds true for a tree)
-	return get_edge_list(root, edge_map).size() + 1;
-}
-
 // Removes the given edge from the edge map provided
 void remove_edge(EdgeMap::value_type edge, EdgeMap& edge_map) {
 	// Remove the edge in both directions
