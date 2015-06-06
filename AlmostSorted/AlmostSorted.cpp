@@ -15,16 +15,12 @@ bool swap_available(int* nums, const int array_size) {
 	int second_misplaced = UNSET;
 	// Check availability of a swap
 	for (int i = 1; i < array_size - 1; i++) {
-		if (first_misplaced == UNSET) {
-			if (nums[i] > nums[i + 1])
+		if (nums[i] > nums[i + 1]) {
+			if (first_misplaced == UNSET)
 				first_misplaced = i;
-		}
-		else if (second_misplaced == UNSET) {
-			if (nums[i] > nums[i + 1])
+			else if (second_misplaced == UNSET)
 				second_misplaced = i + 1;
-		}
-		else {
-			if (nums[i] > nums[i + 1])
+			else 
 				return false;
 		}
 	}
