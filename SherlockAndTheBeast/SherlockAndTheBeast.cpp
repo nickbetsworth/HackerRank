@@ -5,7 +5,7 @@
 #include <sstream>
 //https://www.hackerrank.com/challenges/sherlock-and-the-beast
 
-const std::string get_largest_decent_number(int n) {
+std::string get_largest_decent_number(const int n) {
 	// Hard code the cases where this algorithm fails
 	switch (n) {
 	case 1:
@@ -20,6 +20,7 @@ const std::string get_largest_decent_number(int n) {
 
 	// Work out how many 3s we need
 	int num_3s;
+
 	// n % 3, number of uneven 5s
 	// == 0, no need to do anything
 	// == 1, e.g 10, 13, 16, 19, 22 Replace 2x sets of 3s (10 3s)
@@ -38,19 +39,7 @@ const std::string get_largest_decent_number(int n) {
 
 	int num_5s = n - num_3s;
 
-	std::stringstream ss;
-
-	// Begin by adding the 5s to the builder (as we are looking for the largest number)
-	for (int i = 0; i < num_5s; i++) {
-		ss << '5';
-	}
-
-	// Now add the 3s at the end
-	for (int i = 0; i < num_3s; i++) {
-		ss << '3';
-	}
-
-	return ss.str();
+	return std::string(num_5s, '5') + std::string(num_3s, '3');
 }
 
 int main() {
