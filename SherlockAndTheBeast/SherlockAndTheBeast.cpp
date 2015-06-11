@@ -38,7 +38,7 @@ std::string get_largest_decent_number(const int n) {
 	}
 
 	int num_5s = n - num_3s;
-
+	
 	return std::string(num_5s, '5') + std::string(num_3s, '3');
 }
 
