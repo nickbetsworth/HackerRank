@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
 
 //https://www.hackerrank.com/challenges/diagonal-difference
 
