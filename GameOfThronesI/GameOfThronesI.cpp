@@ -7,6 +7,10 @@
 
 const unsigned NUM_CHARS = 26;
 
+// Works out if there is an available permutation of a string which is palidrome
+// This goes by the idea that every character, must have a matching character
+// With the exception of one single uneven character, which is placed in the center
+// (Note for an evenly sized string, it is not possible to have only 1 uneven character)
 bool is_anagram_palindrome(const std::string& s) {
 	unsigned counts[NUM_CHARS] = { 0 };
 
@@ -16,7 +20,7 @@ bool is_anagram_palindrome(const std::string& s) {
 	}
 
 	bool uneven_found = false;
-	// Calculate how many uneven (non multiple of 2) characters we have
+	// 
 	// At MOST there can only be 1, (if we have an odd sized string)
 	for (int i = 0; i < NUM_CHARS; i++) {
 		if (counts[i] % 2 != 0) {
@@ -28,14 +32,10 @@ bool is_anagram_palindrome(const std::string& s) {
 				uneven_found = true;
 		}
 	}
-	// If we have an even length string, they must be symmetrical,
-	// and hence x = 0
-	if (s.length() % 2 == 0)
-		return uneven_found == false;
-	// Otherwise, we must have one uneven character to be placed centrally
-	else
-		return uneven_found == true
+	
+	return true;
 }
+
 int main() {
 	std::string s;
 	std::cin >> s;
