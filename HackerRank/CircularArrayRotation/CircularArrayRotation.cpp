@@ -5,7 +5,7 @@
 
 //https://www.hackerrank.com/challenges/circular-array-rotation
 
-long mod(long a, long b)
+int mod(int a, int b)
 {
 	return (a%b + b) % b;
 }
